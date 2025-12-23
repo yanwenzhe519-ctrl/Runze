@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
     <style>
-        /* Leo Bai 极简视觉系统 */
+        /* 极致简约视觉系统 - 针对 runze.vercel.app 特别优化 */
         :root { --accent: #00cdac; --text-dark: #121212; --text-gray: #666; --bg: #ffffff; }
-        body { background: var(--bg); color: var(--text-dark); font-family: "Inter", "PingFang SC", sans-serif; overflow-x: hidden; }
+        body { background: var(--bg); color: var(--text-dark); font-family: "Inter", "PingFang SC", sans-serif; overflow-x: hidden; margin: 0; }
         
         .hero-title { font-size: 5.5rem; font-weight: 800; line-height: 0.95; margin-bottom: 2.5rem; letter-spacing: -4px; }
         .hero-subtitle { font-size: 1.6rem; color: var(--text-gray); font-weight: 400; max-width: 800px; margin-bottom: 40px; line-height: 1.4; }
         .highlight { color: var(--accent); }
 
-        /* 卡片化排版优化 */
+        /* 项目卡片布局 */
         .project-card { 
             background: #fff; border-radius: 48px; padding: 60px; margin-bottom: 80px;
             box-shadow: 0 10px 60px rgba(0,0,0,0.03); border: 1px solid #f0f0f0;
@@ -25,7 +25,7 @@
         
         .tag { 
             display: inline-block; background: rgba(0,205,172,0.08); color: var(--accent); 
-            padding: 8px 22px; border-radius: 100px; font-size: 0.9rem; font-weight: 700; margin-bottom: 30px; letter-spacing: 1px;
+            padding: 8px 22px; border-radius: 100px; font-size: 0.9rem; font-weight: 700; margin-bottom: 30px;
         }
 
         /* 微信二维码毛玻璃弹窗 */
@@ -38,42 +38,31 @@
             background: #fff; border-radius: 56px; box-shadow: 0 40px 120px rgba(0,0,0,0.12);
             position: relative;
         }
-        .close-btn { position: absolute; right: 30px; top: 20px; font-size: 40px; color: #ddd; cursor: pointer; transition: 0.3s; }
-        .close-btn:hover { color: var(--accent); }
+        .close-btn { position: absolute; right: 30px; top: 20px; font-size: 40px; color: #ddd; cursor: pointer; }
         
-        /* BTC 实时动态图表容器 */
-        .chart-box { width: 100%; height: 550px; margin-top: 45px; border-radius: 32px; overflow: hidden; border: 1px solid #f0f0f0; }
+        /* BTC 实时动态图表 */
+        .chart-box { width: 100%; height: 500px; margin-top: 45px; border-radius: 32px; overflow: hidden; border: 1px solid #f0f0f0; }
 
         @media (max-width: 768px) {
             .hero-title { font-size: 3.5rem; letter-spacing: -2px; }
-            .project-card { padding: 30px; border-radius: 32px; }
             .modal-content { width: 90%; margin: 20% auto; padding: 30px; }
         }
     </style>
 </head>
 
 <body>
-    <div id="top"></div>
-
     <div id="wechatModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeWechat()">&times;</span>
             <img src="assets/wechat.png" alt="Runze WeChat QR" style="width:100%; border-radius:30px; margin-bottom:30px;">
             <p style="font-size: 1.5rem; font-weight: 800;">ID: <span class="highlight">meiyourenhuilai0</span></p>
-            <p style="color: #999; margin-top: 10px;">长期主义，行则将至</p>
         </div>
     </div>
 
-    <section id="hero" class="jumbotron">
+    <section id="hero" class="jumbotron" style="padding-top: 150px;">
         <div class="container">
-            <h1 class="hero-title">
-                Runze.<br>
-                <span class="highlight">Web3</span> & AI.
-            </h1>
-            <p class="hero-subtitle">
-                专注于 Web3 内容运营生态与 AI 自动化系统构建。
-                我在波动中寻找逻辑，在噪音中提取 <span class="highlight">Alpha</span>。
-            </p>
+            <h1 class="hero-title">Runze.<br><span class="highlight">Web3</span> & AI.</h1>
+            <p class="hero-subtitle">专注于 Web3 内容运营生态与 AI 自动化。在波动中寻找逻辑，在噪音中提取 Alpha。</p>
             <p class="hero-cta"><a class="cta-btn cta-btn--hero" href="#projects">浏览系统</a></p>
         </div>
     </section>
@@ -82,10 +71,10 @@
         <div class="container">
             <div class="project-card">
                 <span class="tag">01 / INVESTMENT SYSTEM</span>
-                <h3 style="font-size: 2.8rem; margin-bottom: 25px; letter-spacing: -1px;">资产配置模型与内容影响力矩阵</h3>
-                <p style="font-size: 1.25rem; color: #555; line-height: 1.8;">
-                    作为币安广场优质作者，持续输出深度研报与技术解读。累计发布 <span class="highlight">150+</span> 篇原创作品，单篇最高阅读量突破 <span class="highlight">100,000+</span>。
-                    基于 MVRV-Z Score 指标，运行一套穿越周期的 BTC 长期定投策略，实现研究与实操的高度合一。
+                <h3>资产配置模型与内容影响力矩阵</h3>
+                <p style="font-size: 1.2rem; color: #555;">
+                    币安广场优质作者，累计发布 150+ 篇原创作品，单篇最高阅读量突破 10万+ [cite: 10, 11]。
+                    通过 MVRV-Z Score 指标运行一套穿越周期的 BTC 定投策略。
                 </p>
                 <div class="chart-box">
                     <div id="tradingview_runze" style="height: 100%;"></div>
@@ -95,14 +84,12 @@
                             "autosize": true,
                             "symbol": "BINANCE:BTCUSDT",
                             "interval": "D",
-                            "timezone": "Etc/UTC",
                             "theme": "light",
                             "style": "1",
                             "locale": "zh_CN",
                             "container_id": "tradingview_runze",
                             "enable_publishing": false,
-                            "hide_top_toolbar": false,
-                            "save_image": false
+                            "hide_top_toolbar": false
                         });
                     </script>
                 </div>
@@ -110,20 +97,10 @@
 
             <div class="project-card">
                 <span class="tag">02 / GROWTH HACKING</span>
-                <h3 style="font-size: 2.8rem; margin-bottom: 25px; letter-spacing: -1px;">Bee Network: 社交资本与流量转化实验</h3>
-                <p style="font-size: 1.25rem; color: #555; line-height: 1.8;">
-                    实操区块链全球项目的冷启动增长。通过构建“核心社区 + 多维内容 + KOL 矩阵”的流量闭环，实现从曝光到沉淀的极速路径。
-                    <br><br>
-                    • <strong>全渠道矩阵：</strong> 覆盖 X (Twitter)、WeChat、抖音等 10+ 核心渠道，举办 10+ 场深度宣讲。
-                    <br>• <strong>增长硬指标：</strong> 个人独立贡献 <span class="highlight">1,901 位</span> 实名有效用户转化，沉淀了完整的 Web3 项目从 0 到 1 推广方法论。
-                </p>
-            </div>
-
-            <div class="project-card">
-                <span class="tag">03 / AI PRODUCTIVITY</span>
-                <h3 style="font-size: 2.8rem; margin-bottom: 25px; letter-spacing: -1px;">AI Agent 驱动的投研自动化工作流</h3>
-                <p style="font-size: 1.25rem; color: #555; line-height: 1.8;">
-                    拒绝碎片化噪音，利用 Gemini 与 Cursor 辅助极速开发原型。自建 AI Agent 自动化信息过滤流，将海量 Web3 研报提炼效率提升 <span class="highlight">80%</span>，将 AI 转化为真正的“数字生产力”。
+                <h3>Bee Network: 社交资本与流量转化实验</h3>
+                <p style="font-size: 1.2rem; color: #555;">
+                    通过构建“社区+内容+KOL”流量闭环，覆盖 10+ 核心渠道 [cite: 12]。
+                    单人独立贡献 <span class="highlight">1,901 位</span> 实名有效用户转化，积累了完整的 Web3 项目从 0 到 1 推广方法论 [cite: 12]。
                 </p>
             </div>
         </div>
@@ -131,23 +108,18 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="social-links" style="margin-bottom: 40px;">
-                <a href="https://x.com/wenzherunze" target="_blank" title="X"><i class="fa fa-twitter"></i></a>
-                <a href="https://github.com/yanwenzhe519-ctrl" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
-                <a href="javascript:void(0)" onclick="openWechat()" title="WeChat"><i class="fa fa-weixin"></i></a>
+            <div class="social-links">
+                <a href="https://x.com/wenzherunze" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/yanwenzhe519-ctrl" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="javascript:void(0)" onclick="openWechat()"><i class="fa fa-weixin"></i></a>
             </div>
-            <p style="opacity: 0.4; font-size: 0.9rem; letter-spacing: 1px;">© 2025 RUNZE | STAY LONG-TERM</p>
+            <p style="opacity: 0.5; margin-top: 20px;">© 2025 RUNZE | STAY LONG-TERM</p>
         </div>
     </footer>
 
     <script>
         function openWechat() { document.getElementById("wechatModal").style.display = "block"; }
         function closeWechat() { document.getElementById("wechatModal").style.display = "none"; }
-        // 点击阴影处关闭弹窗
-        window.onclick = function(event) {
-            let modal = document.getElementById("wechatModal");
-            if (event.target == modal) { modal.style.display = "none"; }
-        }
     </script>
 </body>
 </html>
