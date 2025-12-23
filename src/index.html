@@ -1,125 +1,147 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+<html lang="en" class="sr">
+  <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Runze | Web3 & AI Growth Expert</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <title>Runze | 长期主义信奉者 | Web3 × AI</title>
+    <meta name="keywords" content="Runze, Web3, AI, 长期主义, 定投" />
+    <meta name="description" content="Runze | 探索 Web3 与 AI 的交汇点，长期主义的信奉者。" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
-    <style>
-        /* 极致简约视觉系统 - 针对 runze.vercel.app 特别优化 */
-        :root { --accent: #00cdac; --text-dark: #121212; --text-gray: #666; --bg: #ffffff; }
-        body { background: var(--bg); color: var(--text-dark); font-family: "Inter", "PingFang SC", sans-serif; overflow-x: hidden; margin: 0; }
-        
-        .hero-title { font-size: 5.5rem; font-weight: 800; line-height: 0.95; margin-bottom: 2.5rem; letter-spacing: -4px; }
-        .hero-subtitle { font-size: 1.6rem; color: var(--text-gray); font-weight: 400; max-width: 800px; margin-bottom: 40px; line-height: 1.4; }
-        .highlight { color: var(--accent); }
+    <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  </head>
 
-        /* 项目卡片布局 */
-        .project-card { 
-            background: #fff; border-radius: 48px; padding: 60px; margin-bottom: 80px;
-            box-shadow: 0 10px 60px rgba(0,0,0,0.03); border: 1px solid #f0f0f0;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 80px rgba(0,0,0,0.06); }
-        
-        .tag { 
-            display: inline-block; background: rgba(0,205,172,0.08); color: var(--accent); 
-            padding: 8px 22px; border-radius: 100px; font-size: 0.9rem; font-weight: 700; margin-bottom: 30px;
-        }
+  <body>
+    <div id="top"></div>
 
-        /* 微信二维码毛玻璃弹窗 */
-        #wechatModal { 
-            display: none; position: fixed; z-index: 9999; left: 0; top: 0; 
-            width: 100%; height: 100%; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); 
-        }
-        .modal-content { 
-            margin: 8% auto; padding: 60px; width: 420px; text-align: center;
-            background: #fff; border-radius: 56px; box-shadow: 0 40px 120px rgba(0,0,0,0.12);
-            position: relative;
-        }
-        .close-btn { position: absolute; right: 30px; top: 20px; font-size: 40px; color: #ddd; cursor: pointer; }
-        
-        /* BTC 实时动态图表 */
-        .chart-box { width: 100%; height: 500px; margin-top: 45px; border-radius: 32px; overflow: hidden; border: 1px solid #f0f0f0; }
+    <section id="hero" class="jumbotron">
+      <div class="container">
+        <h1 class="hero-title load-hidden">
+          Hi, my name is <span class="text-color-main">Runze</span>
+          <br />
+          04 | INTJ | 长期主义信奉者 | Web3 × AI
+        </h1>
+        <p class="hero-cta load-hidden">
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">了解更多</a>
+        </p>
+      </div>
+    </section>
 
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3.5rem; letter-spacing: -2px; }
-            .modal-content { width: 90%; margin: 20% auto; padding: 30px; }
-        }
-    </style>
-</head>
-
-<body>
-    <div id="wechatModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeWechat()">&times;</span>
-            <img src="assets/wechat.png" alt="Runze WeChat QR" style="width:100%; border-radius:30px; margin-bottom:30px;">
-            <p style="font-size: 1.5rem; font-weight: 800;">ID: <span class="highlight">meiyourenhuilai0</span></p>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title load-hidden">About me</h2>
+        <div class="row about-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__image load-hidden">
+              <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/profile.jpg" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__info load-hidden">
+              <p class="about-wrapper__info-text">
+                你好！我是 Runze。我致力于探索 Web3 与 AI 的交汇点，相信技术能够改变未来的价值分配方式。
+              </p>
+              <p class="about-wrapper__info-text">
+                作为长期主义的信奉者，我在波动中坚持定投。除了技术，我也热爱研究全球宏观经济和指数基金。
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <section id="hero" class="jumbotron" style="padding-top: 150px;">
-        <div class="container">
-            <h1 class="hero-title">Runze.<br><span class="highlight">Web3</span> & AI.</h1>
-            <p class="hero-subtitle">专注于 Web3 内容运营生态与 AI 自动化。在波动中寻找逻辑，在噪音中提取 Alpha。</p>
-            <p class="hero-cta"><a class="cta-btn cta-btn--hero" href="#projects">浏览系统</a></p>
-        </div>
+      </div>
     </section>
 
     <section id="projects">
-        <div class="container">
-            <div class="project-card">
-                <span class="tag">01 / INVESTMENT SYSTEM</span>
-                <h3>资产配置模型与内容影响力矩阵</h3>
-                <p style="font-size: 1.2rem; color: #555;">
-                    币安广场优质作者，累计发布 150+ 篇原创作品，单篇最高阅读量突破 10万+ [cite: 10, 11]。
-                    通过 MVRV-Z Score 指标运行一套穿越周期的 BTC 定投策略。
-                </p>
-                <div class="chart-box">
-                    <div id="tradingview_runze" style="height: 100%;"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                    <script type="text/javascript">
-                        new TradingView.widget({
-                            "autosize": true,
-                            "symbol": "BINANCE:BTCUSDT",
-                            "interval": "D",
-                            "theme": "light",
-                            "style": "1",
-                            "locale": "zh_CN",
-                            "container_id": "tradingview_runze",
-                            "enable_publishing": false,
-                            "hide_top_toolbar": false
-                        });
-                    </script>
-                </div>
-            </div>
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Projects</h2>
 
-            <div class="project-card">
-                <span class="tag">02 / GROWTH HACKING</span>
-                <h3>Bee Network: 社交资本与流量转化实验</h3>
-                <p style="font-size: 1.2rem; color: #555;">
-                    通过构建“社区+内容+KOL”流量闭环，覆盖 10+ 核心渠道 [cite: 12]。
-                    单人独立贡献 <span class="highlight">1,901 位</span> 实名有效用户转化，积累了完整的 Web3 项目从 0 到 1 推广方法论 [cite: 12]。
-                </p>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Web3 & 大类资产定投模型</h3>
+                <div>
+                  <p class="mb-4">
+                    基于“长期主义”底层逻辑，构建了一套涵盖 BTC、纳指与标普 500 的定投实盘模型。通过对宏观周期与链上数据的持续观察，在市场极端情绪下保持知行合一。
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <div data-tilt class="thumbnail rounded js-tilt">
+                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">个人 AI 自动化工作流构建</h3>
+                <div>
+                  <p class="mb-4">
+                    利用 Gemini 与 ChatGPT 辅助编程、数据处理与内容产出。探索 AI 提升个人生产力的边界，实现从被动接受信息到主动利用 AI 挖掘价值的转变。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <div data-tilt class="thumbnail rounded js-tilt">
+                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">X (Twitter) 价值内容实验</h3>
+                <div>
+                  <p class="mb-4">
+                    在 X 平台深耕 Web3 与 AI 垂直赛道，通过深度洞察行业热点与信息差进行内容输出。持续链接同频领域的从业者，沉淀个人数字品牌资产。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <div data-tilt class="thumbnail rounded js-tilt">
+                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://x.com/wenzherunze" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://github.com/yanwenzhe519-ctrl" target="_blank"><i class="fa fa-github"></i></a>
-                <a href="javascript:void(0)" onclick="openWechat()"><i class="fa fa-weixin"></i></a>
-            </div>
-            <p style="opacity: 0.5; margin-top: 20px;">© 2025 RUNZE | STAY LONG-TERM</p>
+    <footer class="footer navbar-static-bottom">
+      <div class="container">
+        <a rel="noreferrer" href="#top" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a rel="noreferrer" href="https://x.com/wenzherunze" target="_blank">
+            <i class="fa fa-twitter fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="https://github.com/yanwenzhe519-ctrl" target="_blank">
+            <i class="fa fa-github fa-inverse"></i>
+          </a>
         </div>
+        <hr />
+        <p class="footer__text">
+          © 2025 - Developed by Runze
+        </p>
+      </div>
     </footer>
 
-    <script>
-        function openWechat() { document.getElementById("wechatModal").style.display = "block"; }
-        function closeWechat() { document.getElementById("wechatModal").style.display = "none"; }
-    </script>
-</body>
+    <script defer type="module" src="index.js"></script>
+  </body>
 </html>
