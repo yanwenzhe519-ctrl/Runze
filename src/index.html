@@ -7,16 +7,39 @@
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
     <title>Runze | 长期主义信奉者 | Web3 × AI</title>
-    <meta name="keywords" content="Runze, Web3, AI, 长期主义, 定投" />
+    <meta name="keywords" content="Runze, Web3, AI, 长期主义, BTC定投" />
     <meta name="description" content="Runze | 探索 Web3 与 AI 的交汇点，长期主义的信奉者。" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
     <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    
+    <style>
+      /* 微信弹窗样式 */
+      .modal-wechat { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+      .modal-content { margin: 15% auto; padding: 20px; width: 300px; text-align: center; background: white; border-radius: 15px; }
+      .modal-content img { width: 100%; border-radius: 10px; }
+      .wechat-id-text { margin-top: 15px; font-weight: bold; color: #333; }
+      .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+      
+      /* 项目排版优化 */
+      .project-wrapper__text { width: 100% !important; max-width: 900px; margin: 0 auto; text-align: left; }
+      .row { margin-bottom: 6rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 4rem; }
+      .project-wrapper__text-title { font-size: 2.5rem; margin-bottom: 2rem; }
+      .tag { display: inline-block; background: #eee; padding: 2px 10px; border-radius: 5px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 10px; }
+    </style>
   </head>
 
   <body>
     <div id="top"></div>
+
+    <div id="wechatModal" class="modal-wechat">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeWechat()">&times;</span>
+        <img src="assets/wechat.png" alt="WeChat QR Code">
+        <div class="wechat-id-text">ID: meiyourenhuilai0</div>
+      </div>
+    </div>
 
     <section id="hero" class="jumbotron">
       <div class="container">
@@ -57,67 +80,61 @@
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
+          <h2 class="section-title dark-blue-text">Core Projects & Research</h2>
 
           <div class="row">
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Web3 & 大类资产定投模型</h3>
-                <div>
-                  <p class="mb-4">
-                    基于“长期主义”底层逻辑，构建了一套涵盖 BTC、纳指与标普 500 的定投实盘模型。通过对宏观周期与链上数据的持续观察，在市场极端情绪下保持知行合一。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <div data-tilt class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                <span class="tag">Web3</span><span class="tag">Macro Economy</span><span class="tag">Asset Allocation</span>
+                <h3 class="project-wrapper__text-title">Web3 & 全球资产配置定投系统</h3>
+                <p class="mb-4">
+                  <strong>核心理念：</strong>构建一套可穿越周期的非对称性获利系统。通过对宏观流动性周期（Liquidity Cycle）的深度研究，将资产分配在抗通胀的高成长性赛道。
+                  <br><br>
+                  <strong>执行架构：</strong>
+                  <br>• <strong>核心层：</strong>BTC (数字黄金锚定) + 纳斯达克100 (全球硬科技溢价)。
+                  <br>• <strong>策略层：</strong>利用 MVRV-Z Score 与 200日均线作为定投加权参考，实现“恐慌时超额吸筹，狂热时动态平衡”。
+                </p>
+                <div class="tradingview-widget-container shadow-lg rounded" style="height: 400px; margin-top: 20px;">
+                  <iframe src="https://s.tradingview.com/widgetembed/?symbol=BINANCE%3ABTCUSDT&interval=D&theme=light&style=1&locale=zh_CN" width="100%" height="100%" frameborder="0"></iframe>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">个人 AI 自动化工作流构建</h3>
-                <div>
-                  <p class="mb-4">
-                    利用 Gemini 与 ChatGPT 辅助编程、数据处理与内容产出。探索 AI 提升个人生产力的边界，实现从被动接受信息到主动利用 AI 挖掘价值的转变。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <div data-tilt class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
-                </div>
+                <span class="tag">Generative AI</span><span class="tag">Automation</span><span class="tag">Workflow Design</span>
+                <h3 class="project-wrapper__text-title">AI Agent & 个人自动化生产力系统</h3>
+                <p class="mb-4">
+                  <strong>核心理念：</strong>将 AI 从“搜索工具”转化为“数字员工”。通过重构底层信息流，实现从海量噪音到结构化决策的极简路径。
+                  <br><br>
+                  <strong>技术路径：</strong>
+                  <br>• <strong>构建流：</strong>使用 Cursor × Claude 3.5 辅助实现快速原型开发，极大缩短了从想法到上线的时间成本。
+                  <br>• <strong>过滤流：</strong>搭建自动化信息聚合器，通过 AI 自动解析 Web3 深度研报，将日均 2 小时的碎片化阅读压缩至 15 分钟的逻辑提炼。
+                </p>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">X (Twitter) 价值内容实验</h3>
-                <div>
-                  <p class="mb-4">
-                    在 X 平台深耕 Web3 与 AI 垂直赛道，通过深度洞察行业热点与信息差进行内容输出。持续链接同频领域的从业者，沉淀个人数字品牌资产。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <div data-tilt class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                <span class="tag">Social Media</span><span class="tag">Personal Branding</span><span class="tag">Networking</span>
+                <h3 class="project-wrapper__text-title">X (Twitter) 价值网络与内容实验</h3>
+                <p class="mb-4">
+                  <strong>核心理念：</strong>在数字时代，社交账号是唯一的全球化个人资产。通过持续输出 Web3 与 AI 领域的深度洞察，链接全球范围内的同频开发者与投资者。
+                  <br><br>
+                  <strong>实时账户动态：</strong>
+                </p>
+                <div style="max-width: 500px; margin: 0 auto;">
+                  <a class="twitter-timeline" data-height="500" data-theme="light" href="https://twitter.com/wenzherunze?ref_src=twsrc%5Etfw">Tweets by wenzherunze</a> 
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -128,20 +145,29 @@
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
         <div class="social-links">
-          <a rel="noreferrer" href="https://x.com/wenzherunze" target="_blank">
+          <a rel="noreferrer" href="https://x.com/wenzherunze" target="_blank" title="Twitter (X)">
             <i class="fa fa-twitter fa-inverse"></i>
           </a>
-          <a rel="noreferrer" href="https://github.com/yanwenzhe519-ctrl" target="_blank">
+          <a rel="noreferrer" href="https://github.com/yanwenzhe519-ctrl" target="_blank" title="GitHub">
             <i class="fa fa-github fa-inverse"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="openWechat()" title="WeChat">
+            <i class="fa fa-weixin fa-inverse"></i>
           </a>
         </div>
         <hr />
-        <p class="footer__text">
-          © 2025 - Developed by Runze
-        </p>
+        <p class="footer__text">© 2025 - Developed by Runze</p>
       </div>
     </footer>
 
+    <script>
+      function openWechat() { document.getElementById("wechatModal").style.display = "block"; }
+      function closeWechat() { document.getElementById("wechatModal").style.display = "none"; }
+      window.onclick = function(event) {
+        let modal = document.getElementById("wechatModal");
+        if (event.target == modal) { modal.style.display = "none"; }
+      }
+    </script>
     <script defer type="module" src="index.js"></script>
   </body>
 </html>
